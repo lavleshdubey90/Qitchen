@@ -3,25 +3,45 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-forum: 'Forum', sans-serif;
+  --font-satoshi: 'Satoshi', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+  min-height: 100vh;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-satoshi);
+  min-height: 100vh;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-forum);
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .link {
+    @apply hidden sm:block rounded-lg p-3 border border-transparent hover:border-solid hover:border-theme/15 hover:bg-muted duration-300;
+  }
+  .label {
+    @apply p-2 border border-theme/15 hover:border-theme/30 duration-300 cursor-pointer rounded-lg tracking-wide text-xs uppercase;
+  }
+
+  .input {
+    @apply w-full p-3 bg-white/5 rounded-lg placeholder:text-theme/30 outline-none border border-theme/15 focus:outline-none focus:border-theme/30 duration-300;
+  }
+
+  .sliderButtons {
+    @apply absolute p-2 active:scale-90 duration-100 cursor-pointer bg-black/50 rounded-full top-1/2 -translate-y-1/2 z-20;
   }
 }
