@@ -24,7 +24,7 @@ const Blog: React.FC<BlogProps> = ({ params }) => {
     <Template>
       <section className='w-full xl:h-screen relative text-theme'>
         <div className=''>
-          <Image alt='background' src={Background} width={1000} height={1000} className='h-full w-full object-cover absolute z-10' />
+          <Image alt='background' src={Background} unoptimized width={1000} height={1000} className='h-full w-full object-cover absolute z-10' />
         </div>
 
         <div className='h-full w-full absolute z-10 bg-[#0a0b0a]/90' />
