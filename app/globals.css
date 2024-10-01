@@ -7,15 +7,17 @@
   --font-satoshi: 'Satoshi', sans-serif;
 }
 
-html {
+html,
+body {
+  background-color: black;
+  min-height: 100vh;
   scroll-behavior: smooth;
   scroll-padding-top: 20px;
-  min-height: 100vh;
 }
 
 body {
   font-family: var(--font-satoshi);
-  min-height: 100vh;
+
   ::-webkit-scrollbar {
     display: none;
   }
@@ -33,6 +35,7 @@ h5 {
   .link {
     @apply hidden sm:block rounded-lg p-3 border border-transparent hover:border-solid hover:border-theme/15 hover:bg-muted duration-300;
   }
+
   .label {
     @apply p-2 border border-theme/15 hover:border-theme/30 duration-300 cursor-pointer rounded-lg tracking-wide text-xs uppercase;
   }

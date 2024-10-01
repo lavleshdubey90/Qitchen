@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import Navbar from '../components/Navbar';
 import Card from '../components/Card';
 import menuCardBg from "@/public/menu_card_bg.png";
@@ -6,6 +6,7 @@ import reservationCardBg from "@/public/reservation_card_bg.png";
 import restaurentCardBg from "@/public/restaurent_card_bg.png";
 
 const Homepage: React.FC = () => {
+
   return (
     <section className='bg-black w-full h-screen text-theme overflow-x-hidden'>
       <div className='flex flex-1 flex-col lg:flex-row gap-5 justify-between p-3 sm:p-5 h-full'>
