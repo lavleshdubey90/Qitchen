@@ -10,7 +10,7 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = (props) => {
     return (
         <div className='xl:w-1/2 rounded-2xl min-h-[96vh] lg:h-full relative'>
-            <Image width={1000} height={2000} alt='Background' unoptimized src={props.image} className='w-full h-full absolute z-10 object-cover object-center rounded-2xl' />
+            <Image width={1000} height={2000} alt='Background' unoptimized priority src={props.image} className='w-full h-full absolute z-10 object-cover object-center rounded-2xl' />
             <div className='h-full w-full absolute z-20 bg-gradient-to-b from-transparent to-70% to-black/30 rounded-2xl'>
             </div>
 
