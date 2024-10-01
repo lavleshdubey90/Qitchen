@@ -24,7 +24,7 @@ const About: React.FC = () => {
   return (
     <section className='w-full xl:h-screen relative text-theme'>
       <div className=''>
-        <Image alt='background' src={Background} width={1000} height={1000} className='h-full w-full object-cover absolute z-10' />
+        <Image alt='background' src={Background} width={1000} height={1000} unoptimized className='h-full w-full object-cover absolute z-10' />
       </div>
 
       <div className='h-full w-full absolute z-10 bg-[#0a0b0a]/90'></div>
@@ -48,21 +48,21 @@ const About: React.FC = () => {
             <div className='w-full flex flex-col sm:flex-row h-full gap-4'>
               <div className='text-center grid place-content-center w-full p-3 sm:p-8 border-theme/15 border rounded-2xl'>
                 <div>
-                  <Image src={Stars} width={100} height={100} className='w-24 mx-auto' alt='Stars' />
+                  <Image src={Stars} width={100} height={100} unoptimized className='w-24 mx-auto' alt='Stars' />
                   <h4 className='text-2xl uppercase tracking-wide mt-2'>Trip Advisor</h4>
                   <p className='uppercase text-xs text-theme/70 mt-2 !tracking-wide'>Best Sushi</p>
                 </div>
               </div>
               <div className='text-center grid place-content-center w-full p-3 sm:p-8 border-theme/15 border rounded-2xl'>
                 <div>
-                  <Image src={Stars} width={100} height={100} className='w-24 mx-auto' alt='Stars' />
+                  <Image src={Stars} width={100} height={100} unoptimized className='w-24 mx-auto' alt='Stars' />
                   <h4 className='text-2xl uppercase tracking-wide mt-2'>Michelin Guide</h4>
                   <p className='uppercase text-xs text-theme/70 mt-2 !tracking-wide'>Quality Food</p>
                 </div>
               </div>
               <div className='text-center grid place-content-center w-full p-3 sm:p-8 border-theme/15 border rounded-2xl'>
                 <div>
-                  <Image src={Stars} width={100} height={100} className='w-24 mx-auto' alt='Stars' />
+                  <Image src={Stars} width={100} height={100} unoptimized className='w-24 mx-auto' alt='Stars' />
                   <h4 className='text-2xl uppercase tracking-wide mt-2'>Start Dining</h4>
                   <p className='uppercase text-xs text-theme/70 mt-2 !tracking-wide'>Cool vibe</p>
                 </div>

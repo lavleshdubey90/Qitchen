@@ -14,7 +14,7 @@ interface MenulistProps {
 const Menulist: React.FC<MenulistProps> = (props) => {
     return (
         <div className='flex flex-col sm:flex-row gap-x-6 gap-y-3 w-full'>
-            <Image src={props.image} height={100} width={150} alt={props.alt} className='w-full sm:w-[150px] sm:h-[100px] rounded-lg' />
+            <Image unoptimized src={props.image} height={100} width={150} alt={props.alt} className='w-full sm:w-[150px] sm:h-[100px] rounded-lg' />
             <div className='w-full text-xl flex flex-col gap-y-1 justify-center'>
                 <div className='flex items-baseline gap-x-4'>
                     <h3 className='uppercase tracking-wide'>{props.name}</h3>

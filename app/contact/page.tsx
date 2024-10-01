@@ -6,6 +6,7 @@ import Sidebar from '../components/Sidebar';
 import ContactBg from "@/public/contact_page_bg.png";
 import Background from "@/public/pages_bg.png";
 import Heading from '../components/Heading';
+import Instagram from "@/public/instagram.png";
 import Instagram1 from "@/public/instagram_card_1.png";
 import Instagram2 from "@/public/instagram_card_2.png";
 import Instagram3 from "@/public/instagram_card_3.png";
@@ -55,9 +56,30 @@ const Contact: React.FC = () => {
                         <div className='sm:w-1/2 rounded-2xl h-full grid grid-cols-2 grid-rows-2 gap-4'>
                             {
                                 instagramImages.map((image: StaticImageData, index: number) => (
-                                    <div key={index} className='rounded-2xl'>
-                                        <Image src={image} width={500} height={500} alt='Instagram' className='w-full h-full object-cover object-center rounded-2xl' />
-                                    </div>
+                                    <Link key={index} href={"https://instagram.com/"} target="_blank">
+                                        <div className='w-full h-full relative group overflow-hidden rounded-2xl cursor-pointer'>
+
+                                            <Image
+                                                src={image}
+                                                width={500}
+                                                height={500}
+                                                unoptimized
+                                                alt='Instagram'
+                                                className='rounded-2xl h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-110'
+                                            />
+
+                                            <div className='absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                                                <Image
+                                                    src={Instagram}
+                                                    width={60}
+                                                    height={60}
+                                                    unoptimized
+                                                    alt='Instagram Image'
+                                                    className='w-[30px]'
+                                                />
+                                            </div>
+                                        </div>
+                                    </Link>
                                 ))
                             }
                         </div>

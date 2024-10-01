@@ -30,7 +30,7 @@ const CustomMap: React.FC<MapProps> = ({ latitude, longitude, zoom }) => {
         if (isBrowser) {
             import('leaflet').then((leaflet) => {
                 setL(leaflet);
-                // Fix Leaflet marker icon paths for Next.js
+
                 leaflet.Icon.Default.mergeOptions({
                     iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
                     iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
@@ -45,7 +45,7 @@ const CustomMap: React.FC<MapProps> = ({ latitude, longitude, zoom }) => {
         if (mapRef.current && L) {
             mapRef.current.on('click', () => {
                 const url = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
-                window.open(url, '_blank'); // Open Google Maps in a new tab
+                window.open(url, '_blank');
             });
         }
     }, [L, latitude, longitude]);
@@ -54,7 +54,6 @@ const CustomMap: React.FC<MapProps> = ({ latitude, longitude, zoom }) => {
         return null;
     }
 
-    // Create a custom icon
     const customIcon = new Icon({
         iconUrl: Location.src,
         iconSize: [32, 42.67],

@@ -39,6 +39,7 @@ const Carousal: React.FC<CarousalProps> = (props) => {
                             src={image}
                             width={456}
                             height={377}
+                            unoptimized
                             alt={`Carousal Image ${index}`}
                             className='h-full w-full object-cover object-center rounded-2xl'
                         />

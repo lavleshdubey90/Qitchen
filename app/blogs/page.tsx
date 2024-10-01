@@ -13,7 +13,7 @@ const Blogs = () => {
     return (
         <section className='w-full xl:h-screen relative text-theme'>
             <div className=''>
-                <Image alt='background' src={Background} width={1000} height={1000} className='h-full w-full object-cover absolute z-10' />
+                <Image alt='background' unoptimized src={Background} width={1000} height={1000} className='h-full w-full object-cover absolute z-10' />
             </div>
 
             <div className='h-full w-full absolute z-10 bg-[#0a0b0a]/90' />
@@ -37,11 +37,11 @@ const Blogs = () => {
                                             <Link href={`/blogs/${blog.id}`} >
                                                 <div className='flex flex-col sm:flex-row gap-8 2xl:gap-12 items-center cursor-pointer group'>
                                                     <div className='sm:w-2/5 h-full overflow-hidden rounded-2xl'>
-                                                        <Image src={blog.cardImage} width={500} height={500} alt='Image' className='rounded-2xl h-full w-full object-center group-hover:scale-110 ease-in-out duration-500' />
+                                                        <Image src={blog.cardImage} width={500} height={500} unoptimized alt='Image' className='rounded-2xl h-full w-full object-center group-hover:scale-110 ease-in-out duration-500' />
                                                     </div>
                                                     <div className='sm:w-3/5 space-y-2'>
                                                         <span className="uppercase flex items-center text-xs gap-x-2">
-                                                            <Image src={Leftpin} width={150} height={20} alt='pin' className='w-8' />
+                                                            <Image src={Leftpin} width={150} height={20} unoptimized alt='pin' className='w-8' />
                                                             {blog.date}
                                                         </span>
                                                         <h3 className='text-2xl uppercase'>{blog.title}</h3>
