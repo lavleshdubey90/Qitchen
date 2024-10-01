@@ -7,7 +7,6 @@ import Sidebar from '../components/Sidebar';
 import Heading from '../components/Heading';
 
 import Leftpin from "@/public/left_pin.png";
-import Blog from './[id]/page';
 import { blogPosts } from './data';
 
 const Blogs = () => {

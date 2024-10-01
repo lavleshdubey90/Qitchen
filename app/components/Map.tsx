@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import { useEffect, useState, useRef } from 'react';
 import 'leaflet/dist/leaflet.css';
 import Location from "@/public/location.png"; // Ensure the path is correct
+import { Map as LeafletMap, Icon, LatLngExpression } from 'leaflet';
 
 const isBrowser = typeof window !== 'undefined';
 
@@ -22,8 +23,8 @@ interface MapProps {
 
 const CustomMap: React.FC<MapProps> = ({ latitude, longitude, zoom }) => {
     const [isClient, setIsClient] = useState<boolean>(false);
-    const [L, setL] = useState<any>(null);
-    const mapRef = useRef<any>(null);
+    const [L, setL] = useState<typeof import('leaflet') | null>(null);
+    const mapRef = useRef<LeafletMap | null>(null);
 
     useEffect(() => {
         if (isBrowser) {
@@ -54,7 +55,7 @@ const CustomMap: React.FC<MapProps> = ({ latitude, longitude, zoom }) => {
     }
 
     // Create a custom icon
-    const customIcon = new L.Icon({
+    const customIcon = new Icon({
         iconUrl: Location.src,
         iconSize: [32, 42.67],
         iconAnchor: [16, 32],
@@ -63,17 +64,21 @@ const CustomMap: React.FC<MapProps> = ({ latitude, longitude, zoom }) => {
 
     return (
         <MapContainer
-            center={[latitude, longitude]}
+            center={[latitude, longitude] as LatLngExpression}
             zoom={zoom}
             zoomControl={false}
             attributionControl={false}
             style={{ height: '100%', width: '100%', borderRadius: "16px", zIndex: 10 }}
-            ref={mapRef} // Assign ref to map container
+            ref={(ref) => {
+                if (ref) {
+                    mapRef.current = ref;
+                }
+            }}
         >
             <TileLayer
                 url="https://tile.jawg.io/cebae4eb-aa6e-4c6d-82c0-1f0c93256b82/{z}/{x}/{y}{r}.png?access-token=BqsDEtYBQwHpGnpS4Dz8yFz1BNmBI2zOtUkZYlygNmJguSPnzSNklZ8KRbjx9CYb"
             />
-            <Marker position={[latitude, longitude]} icon={customIcon}>
+            <Marker position={[latitude, longitude] as LatLngExpression} icon={customIcon}>
                 <Popup>
                     This is your location.
                 </Popup>

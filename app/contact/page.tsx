@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import Image, { StaticImageData } from 'next/image';
 import Sidebar from '../components/Sidebar';
@@ -8,9 +10,11 @@ import Instagram1 from "@/public/instagram_card_1.png";
 import Instagram2 from "@/public/instagram_card_2.png";
 import Instagram3 from "@/public/instagram_card_3.png";
 import Instagram4 from "@/public/instagram_card_4.png";
-import Map from '../components/Map';
 import { GoArrowRight } from "react-icons/go";
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+
+const Map = dynamic(() => import('../components/Map'), { ssr: false }); // Dynamic import
 
 const Contact: React.FC = () => {
 
